@@ -59,7 +59,9 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ## Project Preview
 
+![Sorting Visualizer](SAV1.png)
 
+![Sorting Visualizer](SAV2.png)
 
 ---
 
