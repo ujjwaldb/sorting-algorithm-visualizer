@@ -59,7 +59,7 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ## Project Preview
 
-(Add screenshot here)
+
 
 ---
 
