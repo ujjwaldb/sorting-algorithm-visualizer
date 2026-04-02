@@ -1,46 +1,88 @@
-# Sorting Visualizer
-A web-based sorting algorithm visualizer demonstrating Bubble Sort, Selection Sort, and Merge Sort with animations.
 # Sorting Algorithm Visualizer
 
-## Overview
+## 📌 Overview
 
-This project is a web-based visualization tool for understanding fundamental sorting algorithms. It demonstrates how different algorithms operate step-by-step using animated bars.
+This project is a web-based Sorting Algorithm Visualizer built using HTML, CSS, and JavaScript.
+It helps in understanding how different sorting algorithms work by visualizing them step-by-step.
 
-## Algorithms Implemented
+---
 
-* Bubble Sort (O(n²))
-* Selection Sort (O(n²))
-* Merge Sort (O(n log n))
+## 🚀 Features
 
-## Features
+* Generate random array of bars
+* Adjust array size using slider
+* Adjust sorting speed
+* Visualize sorting step-by-step
+* Color-coded animations:
 
-* Adjustable array size
-* Adjustable sorting speed
-* Step-by-step animation
-* Visual highlighting of comparisons and swaps
+  * 🔴 Red → Comparing elements
+  * 🟡 Yellow → Current element
+  * 🟢 Green → Sorted elements
 
-## Concepts Demonstrated
+---
 
-* Data Structures (arrays)
-* Algorithms and time complexity
-* Recursion (Merge Sort)
-* Asynchronous programming (JavaScript async/await)
-* DOM manipulation
+## 🧠 Algorithms Implemented
 
-## How to Run
+### 1. Bubble Sort
+
+* Compares adjacent elements
+* Swaps if they are in wrong order
+* Time Complexity: **O(n²)**
+
+### 2. Selection Sort
+
+* Finds minimum element and places it correctly
+* Time Complexity: **O(n²)**
+
+### 3. Merge Sort
+
+* Uses divide and conquer technique
+* Recursively splits array and merges
+* Time Complexity: **O(n log n)**
+
+---
+
+## 🛠️ Technologies Used
+
+* HTML
+* CSS
+* JavaScript (DOM Manipulation, Async/Await)
+
+---
+
+## 📂 How to Run
 
 1. Download or clone the repository
 2. Open `index.html` in your browser
 
-## What I Learned
+---
 
-* Implementing and comparing different sorting algorithms
-* Visualizing algorithm behavior
-* Understanding recursion and divide-and-conquer approach
-* Managing UI updates with asynchronous JavaScript
+## 📸 Project Preview
 
-## Future Improvements
+(Add screenshot here)
+
+---
+
+## 📚 What I Learned
+
+* How sorting algorithms work internally
+* Difference between iterative and recursive approaches
+* DOM manipulation using JavaScript
+* Handling asynchronous animations using `async/await`
+
+---
+
+## 🔮 Future Improvements
 
 * Add more algorithms (Quick Sort, Heap Sort)
-* Improve Merge Sort visualization
+* Improve Merge Sort animation
 * Add performance comparison graphs
+* Add pause/resume functionality
+
+---
+
+## 🎯 Purpose of Project
+
+This project was built to strengthen my understanding of Data Structures and Algorithms and to visualize how sorting algorithms behave in real-time.
+
+---
