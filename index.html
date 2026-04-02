@@ -1,0 +1,278 @@
+<script>
+
+let arr = [];
+
+function generateArray() {
+
+  // reset array
+  arr = [];
+
+  // get container
+  let container = document.getElementById("container");
+
+  // clear old bars
+  container.innerHTML = "";
+
+  // get size from slider
+  let sizeValue = document.getElementById("sizeSlider").value;
+
+  // loop to create bars
+  for (let i = 0; i < sizeValue; i++) {
+
+    // create random number
+    let randomNumber = Math.random();
+    let multiplied = randomNumber * 100;
+    let finalNumber = Math.floor(multiplied);
+
+    // store in array
+    arr.push(finalNumber);
+
+    // create div
+    let newDiv = document.createElement("div");
+
+    // add class
+    newDiv.classList.add("bar");
+
+    // set height
+    let heightValue = finalNumber * 3;
+    newDiv.style.height = heightValue + "px";
+
+    // set width
+    let widthValue = 600 / sizeValue;
+    newDiv.style.width = widthValue + "px";
+
+    // add to container
+    container.appendChild(newDiv);
+  }
+}
+
+
+function getSpeed() {
+  let speedSliderValue = document.getElementById("speedSlider").value;
+  let convertedSpeed = 101 - speedSliderValue;
+  return convertedSpeed;
+}
+
+
+function sleep(ms) {
+  return new Promise(function(resolveFunction) {
+    setTimeout(resolveFunction, ms);
+  });
+}
+
+
+function showInfo(text) {
+  let infoElement = document.getElementById("info");
+  infoElement.innerText = text;
+}
+
+
+function disableButtons() {
+  let allButtons = document.querySelectorAll("button");
+
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].disabled = true;
+  }
+}
+
+
+function enableButtons() {
+  let allButtons = document.querySelectorAll("button");
+
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].disabled = false;
+  }
+}
+
+
+async function bubbleSort() {
+
+  disableButtons();
+
+  showInfo("Bubble Sort running...");
+
+  let bars = document.getElementsByClassName("bar");
+
+  let totalBars = bars.length;
+
+  for (let i = 0; i < totalBars; i++) {
+
+    for (let j = 0; j < totalBars - i - 1; j++) {
+
+      let firstBar = bars[j];
+      let secondBar = bars[j + 1];
+
+      firstBar.style.backgroundColor = "red";
+      secondBar.style.backgroundColor = "red";
+
+      let delayValue = getSpeed();
+      await sleep(delayValue);
+
+      let height1 = firstBar.style.height;
+      let height2 = secondBar.style.height;
+
+      let number1 = parseInt(height1);
+      let number2 = parseInt(height2);
+
+      if (number1 > number2) {
+
+        let temp = firstBar.style.height;
+
+        firstBar.style.height = secondBar.style.height;
+        secondBar.style.height = temp;
+      }
+
+      firstBar.style.backgroundColor = "cyan";
+      secondBar.style.backgroundColor = "cyan";
+    }
+
+    let lastIndex = totalBars - i - 1;
+    bars[lastIndex].style.backgroundColor = "green";
+  }
+
+  enableButtons();
+}
+
+async function selectionSort() {
+
+  disableButtons();
+
+  showInfo("Selection Sort running...");
+
+  let bars = document.getElementsByClassName("bar");
+
+  let totalBars = bars.length;
+
+  for (let i = 0; i < totalBars; i++) {
+
+    let minIndex = i;
+
+    let currentBar = bars[i];
+    currentBar.style.backgroundColor = "yellow";
+
+    for (let j = i + 1; j < totalBars; j++) {
+
+      let checkingBar = bars[j];
+
+      checkingBar.style.backgroundColor = "red";
+
+      let delayValue = getSpeed();
+      await sleep(delayValue);
+
+      let value1 = parseInt(checkingBar.style.height);
+      let value2 = parseInt(bars[minIndex].style.height);
+
+      if (value1 < value2) {
+
+        if (minIndex !== i) {
+          bars[minIndex].style.backgroundColor = "cyan";
+        }
+
+        minIndex = j;
+
+      } else {
+        checkingBar.style.backgroundColor = "cyan";
+      }
+    }
+
+    let temp = bars[i].style.height;
+    bars[i].style.height = bars[minIndex].style.height;
+    bars[minIndex].style.height = temp;
+
+    bars[minIndex].style.backgroundColor = "cyan";
+    bars[i].style.backgroundColor = "green";
+  }
+
+  enableButtons();
+}
+
+async function mergeSortStart() {
+
+  disableButtons();
+
+  showInfo("Merge Sort running...");
+
+  let bars = document.getElementsByClassName("bar");
+
+  let tempArray = [];
+
+  for (let i = 0; i < bars.length; i++) {
+
+    let heightString = bars[i].style.height;
+    let heightNumber = parseInt(heightString);
+
+    tempArray.push(heightNumber);
+  }
+
+  let sortedArray = await mergeSort(tempArray);
+
+  for (let i = 0; i < bars.length; i++) {
+
+    let bar = bars[i];
+
+    bar.style.backgroundColor = "yellow";
+
+    let delayValue = getSpeed();
+    await sleep(delayValue);
+
+    bar.style.height = sortedArray[i] + "px";
+
+    bar.style.backgroundColor = "green";
+  }
+
+  enableButtons();
+}
+
+async function mergeSort(array) {
+
+  if (array.length <= 1) {
+    return array;
+  }
+
+  let middleIndex = Math.floor(array.length / 2);
+
+  let leftPart = array.slice(0, middleIndex);
+  let rightPart = array.slice(middleIndex);
+
+  let sortedLeft = await mergeSort(leftPart);
+  let sortedRight = await mergeSort(rightPart);
+
+  let finalResult = await merge(sortedLeft, sortedRight);
+
+  return finalResult;
+}
+
+async function merge(left, right) {
+
+  let result = [];
+
+  let i = 0;
+  let j = 0;
+
+  while (i < left.length && j < right.length) {
+
+    let delayValue = getSpeed();
+    await sleep(delayValue);
+
+    if (left[i] < right[j]) {
+      result.push(left[i]);
+      i = i + 1;
+    } else {
+      result.push(right[j]);
+      j = j + 1;
+    }
+
+    showInfo("Merging arrays...");
+  }
+
+  let remainingLeft = left.slice(i);
+  let remainingRight = right.slice(j);
+
+  let finalArray = result.concat(remainingLeft).concat(remainingRight);
+
+  return finalArray;
+}
+
+generateArray();
+
+</script>
