@@ -1,13 +1,13 @@
 # Sorting Algorithm Visualizer
 
-## 📌 Overview
+## Overview
 
 This project is a web-based Sorting Algorithm Visualizer built using HTML, CSS, and JavaScript.
 It helps in understanding how different sorting algorithms work by visualizing them step-by-step.
 
 ---
 
-## 🚀 Features
+## Features
 
 * Generate random array of bars
 * Adjust array size using slider
@@ -21,7 +21,7 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ---
 
-## 🧠 Algorithms Implemented
+## Algorithms Implemented
 
 ### 1. Bubble Sort
 
@@ -42,7 +42,7 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 * HTML
 * CSS
@@ -50,20 +50,20 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ---
 
-## 📂 How to Run
+## How to Run
 
 1. Download or clone the repository
 2. Open `index.html` in your browser
 
 ---
 
-## 📸 Project Preview
+## Project Preview
 
 (Add screenshot here)
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 * How sorting algorithms work internally
 * Difference between iterative and recursive approaches
@@ -72,7 +72,7 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 * Add more algorithms (Quick Sort, Heap Sort)
 * Improve Merge Sort animation
@@ -81,7 +81,7 @@ It helps in understanding how different sorting algorithms work by visualizing t
 
 ---
 
-## 🎯 Purpose of Project
+## Purpose of Project
 
 This project was built to strengthen my understanding of Data Structures and Algorithms and to visualize how sorting algorithms behave in real-time.
 
